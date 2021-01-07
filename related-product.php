@@ -16,24 +16,23 @@
 		'posts_per_page' => 4,
 		'orderby' => 'date',
 		'post__not_in'=>array($post->ID)
-	 ) );
+	) );
 ?>
 
+
 <aside class="related-product">
+
 	<div class="caption-text">
-		<span class="text">
-			<h3>Sản phẩm liên quan</h3>
-		</span>
+		<span class="text"><h3>Sản phẩm liên quan</h3></span>
 	</div>
 
-	<?php
-		if($query->have_posts()) : while ($query->have_posts() ) : $query->the_post(); ?>
+	<?php if($query->have_posts()) : while ($query->have_posts() ) : $query->the_post(); ?>
 
-			<div class="title">
-		      <a href="<?php the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>">
-		      	<h4><?php the_title(); ?></h4>
-		      </a>
-		    </div>
+		<div class="title">
+	        <a href="<?php the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>">
+	      	    <h4><?php the_title(); ?></h4>
+	        </a>
+	    </div>
 
 	<?php endwhile; wp_reset_postdata(); else: echo ''; endif; ?>
 
