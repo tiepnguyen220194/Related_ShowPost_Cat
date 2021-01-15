@@ -29,7 +29,7 @@
 	<?php if($query->have_posts()) : while ($query->have_posts() ) : $query->the_post(); ?>
 
 		<div class="title">
-	        <a href="<?php the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>">
+	        <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
 	      	    <h4><?php the_title(); ?></h4>
 	        </a>
 	    </div>
